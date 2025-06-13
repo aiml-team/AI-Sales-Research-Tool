@@ -298,6 +298,23 @@ if "search_history" not in st.session_state:
 if "selected_company" not in st.session_state:
     st.session_state["selected_company"] = None
 
+# Add a horizontal line
+st.markdown("<hr style='border: 1px solid #ffffff55;'>", unsafe_allow_html=True)
+
+# Add note text with bullets
+st.markdown(
+        """
+        <div style='color: white; font-size: 13px;'>
+            <strong>Note:</strong>
+            <ul style="padding-left: 18px; line-height: 1.6; margin-top: 10px;">
+                <li>This app uses a dark theme. If your system uses a light/default theme, go to the top-right settings ( : ) and switch to <strong>Dark</strong> mode for optimal experience.</li>
+                <li>Search history will reset on page reload. Each report is navigable, so ensure you <strong>download</strong> your reports before refreshing.</li>
+            </ul>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 # Sidebar with history
 selected_company = st.sidebar.radio(
     "Click a company to reload report:",
@@ -308,7 +325,7 @@ selected_company = st.sidebar.radio(
 )
 
 # Handle deselect
-if st.sidebar.button("Deselect"):
+if st.sidebar.button("New Research"):
     st.session_state["selected_company"] = None
     st.rerun()
 
