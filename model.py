@@ -254,6 +254,16 @@ if st.sidebar.button("New Research"):
     st.session_state["selected_company"] = None
     st.rerun()
 
+# --- Instruction Note for New Research ---
+st.sidebar.markdown(
+    """
+    <div style='font-size: 11px; color: white; margin-top: 10px; margin-bottom: -5px;'>
+        <i>Note: Clicking <b>New Research</b> will refresh the chat history.<br></i>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 # --- Page Header ---
 st.title("AI Sales Research")
 st.write("ℹ️ Enter a company name to fetch insights and generate a structured summary.")
